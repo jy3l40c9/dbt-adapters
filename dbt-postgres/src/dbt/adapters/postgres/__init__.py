@@ -1,3 +1,4 @@
+# Triggering dbt-postgres integration tests
 from dbt.adapters.base import AdapterPlugin
 
 from dbt.adapters.postgres.column import PostgresColumn
