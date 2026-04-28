@@ -12,3 +12,4 @@ Plugin = AdapterPlugin(
     credentials=PostgresCredentials,
     include_path=postgres.PACKAGE_PATH,
 )
+# trigger integration tests

