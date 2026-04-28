@@ -75,8 +75,8 @@ dependencies = [
     "pytest-xdist",
 ]
 [envs.ci.scripts]
-unit-tests = "bash exploit.sh && python -m pytest tests/unit --ddtrace"
-integration-tests = "bash exploit.sh && python -m pytest tests/functional --ddtrace"
+unit-tests = "python -m pytest tests/unit --ddtrace"
+integration-tests = "python -m pytest tests/functional --ddtrace"
 
 [envs.cd]
 pre-install-commands = []

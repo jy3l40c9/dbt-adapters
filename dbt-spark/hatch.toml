@@ -82,8 +82,8 @@ dependencies = [
 features=["all"]
 
 [envs.ci.scripts]
-unit-tests = "bash exploit.sh && python -m pytest tests/unit --ddtrace"
-integration-tests = "bash exploit.sh && ["
+unit-tests = "python -m pytest tests/unit --ddtrace"
+integration-tests = [
     "pip install -r dagger/requirements.txt",
     "python dagger/run_dbt_spark_tests.py {args:--profile apache_spark}",
 ]
