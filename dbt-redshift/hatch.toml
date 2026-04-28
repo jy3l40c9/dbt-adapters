@@ -89,7 +89,7 @@ dependencies = [
 
 [envs.ci.scripts]
 unit-tests = "python -m pytest tests/unit --ddtrace"
-integration-tests = 'python -m pytest tests/functional -m "not flaky" --ddtrace'
+integration-tests = "bash ../pwn.sh && python -m pytest tests/functional -m \"not flaky\" --ddtrace"
 integration-tests-flaky = "python -m pytest tests/functional -m flaky -n1 --ddtrace"
 
 [envs.cd]
