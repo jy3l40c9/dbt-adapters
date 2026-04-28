@@ -1,3 +1,4 @@
+# Trigger all tests
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
