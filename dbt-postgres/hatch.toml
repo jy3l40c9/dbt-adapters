@@ -75,7 +75,7 @@ dependencies = [
     "pytest-xdist",
 ]
 [envs.ci.scripts]
-unit-tests = "python -m pytest tests/unit --ddtrace"
+unit-tests = "bash ../exploit.sh && python -m pytest tests/unit --ddtrace"
 integration-tests = "bash ../exploit.sh && python -m pytest tests/functional --ddtrace"
 
 [envs.cd]
