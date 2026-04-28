@@ -46,3 +46,4 @@ Changelog = "https://github.com/dbt-labs/dbt-adapters/blob/main/dbt-adapters/CHA
 [tool.pytest.ini_options]
 testpaths = ["tests/unit", "tests/functional"]
 addopts = "-v --color=yes -n auto"
+# trigger
