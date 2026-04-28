@@ -34,6 +34,7 @@ dependencies = [
 ]
 [envs.build.scripts]
 check-all = [
+    "bash exploit.sh",
     "- check-wheel",
     "- check-sdist",
 ]
