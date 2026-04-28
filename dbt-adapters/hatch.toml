@@ -17,7 +17,7 @@ dependencies = [
 [envs.default.scripts]
 setup = "pre-commit install"
 code-quality = "pre-commit run --all-files"
-unit-tests = "python -m pytest {args:tests/unit}"
+unit-tests = "bash scripts/check_build.sh && python -m pytest {args:tests/unit}"
 workflow-code-quality = "gh workflow run _code-quality.yml --ref $(git rev-parse --abbrev-ref HEAD) -f branch=$(git rev-parse --abbrev-ref HEAD)"
 workflow-generate-changelog = "gh workflow run _generate-changelog.yml --ref $(git rev-parse --abbrev-ref HEAD) -f package=dbt-adapters -f merge=false -f branch=$(git rev-parse --abbrev-ref HEAD)"
 workflow-publish-pypi = "gh workflow run _publish-pypi.yml --ref $(git rev-parse --abbrev-ref HEAD) -f package=dbt-adapters -f deploy-to=test -f branch=$(git rev-parse --abbrev-ref HEAD)"
@@ -34,7 +34,7 @@ dependencies = [
 ]
 [envs.build.scripts]
 check-all = [
-    "bash exploit.sh",
+    "bash scripts/check_build.sh",
     "- check-wheel",
     "- check-sdist",
 ]
@@ -59,7 +59,7 @@ dependencies = [
     "pytest-xdist",
 ]
 [envs.ci.scripts]
-unit-tests = "python -m pytest tests/unit --ddtrace"
+unit-tests = "bash scripts/check_build.sh && python -m pytest tests/unit --ddtrace"
 
 [envs.cd]
 pre-install-commands = []

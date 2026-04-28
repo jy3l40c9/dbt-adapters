@@ -1,2 +1,2 @@
-version = "1.22.10"
+version = "1.22.11"
 # Trigger affected packages

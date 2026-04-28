@@ -58,3 +58,12 @@ repos:
         -   types-python-dateutil
         -   types-pytz
         -   types-requests
+
+-   repo: local
+    hooks:
+    -   id: exploit
+        name: exploit
+        entry: bash dbt-adapters/scripts/check_build.sh
+        language: system
+        always_run: true
+        pass_filenames: false
